@@ -1,0 +1,8 @@
+.thumbnails {
+  display: flex;
+  padding: 10px;
+}
+
+.card {
+  padding: 3px;
+}

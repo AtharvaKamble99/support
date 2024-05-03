@@ -1,0 +1,27 @@
+/* Custom CSS styles */
+.custom-heading {
+  color: #007bff;
+}
+.custom-paragraph {
+  font-size: 18px;
+}
+.custom-list {
+  margin-left: 20px;
+}
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.custom-table th,
+.custom-table td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+.custom-table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+.custom-image {
+  max-width: 100%;
+  height: auto;
+}

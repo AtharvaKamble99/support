@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQuery</title>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="#home">Home</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div data-role="page" id="home">
+      <div class="page-header">
+        <h1>Welcome to our Website</h1>
+      </div>
+      <div class="page-content">
+        <button id="showCollegeBtn">About Our College</button>
+        <div id="courseContainer" style="display: none">
+          <h2 style="text-align: center">About Our College</h2>
+          <div id="hello" style="text-align: center">
+            <a href="https://pict.edu"> Go to PICT Website </a>
+          </div>
+        </div>
+      </div>
+      <div class="page-content">
+        <button id="showDeptBtn">About Our Clubs</button>
+        <div id="deptContainer" style="display: none">
+          <h2 style="text-align: center">About our Clubs</h2>
+          <ul id="courseList"></ul>
+        </div>
+      </div>
+      <div class="footer">
+        <h4>contact US : example@gmail.com</h4>
+      </div>
+    </div>
+
+    <div data-role="page" id="contact">
+      <div class="page-header">
+        <h1>Contact Us</h1>
+      </div>
+      <div class="page-content">
+        <p>
+          If you have any inquiries or feedback, please feel free to contact us
+          at example@example.com or give us a call at +123456789.
+        </p>
+      </div>
+      <div class="footer">
+        <h4>contact US : example@gmail.com</h4>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#showCollegeBtn").click(function () {
+          $("#courseContainer").toggle();
+        });
+      });
+      $(document).ready(function () {
+        $("#showDeptBtn").click(function () {
+          $("#deptContainer").toggle();
+          if ($("#deptContainer").is(":visible")) {
+            var courses = [
+              { name: "PASC", link: "https://pict.acm.org/" },
+              { name: "PICT IEEE", link: "https://www.pictieee.in/" },
+              {
+                name: "PICT EDC",
+                link: "https://edcpict.github.io/EDC_Website/index.html",
+              },
+            ];
+            $("#courseList").empty();
+            $.each(courses, function (index, course) {
+              $("#courseList").append(
+                '<li><a href="' + course.link + '">' + course.name + "</a></li>"
+              );
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
